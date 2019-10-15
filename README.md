@@ -23,4 +23,23 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|id|integer|null: false|
+|email|string|null: false|
+|name|string|null: false|
+|grade|integer|null: false|
+|per_hour|integer||
+### Association
+- has_many :shifts
 
+## shiftsテーブル
+|Column|Type|Option|
+|------|----|------|
+|starts_at|time|null: false|
+|expired_at|time|null: false|
+|break_starts_at|time||
+|break_expired_at|time||
+### Association
+- belongs_to :user
