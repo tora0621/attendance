@@ -1,17 +1,20 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+.form-wrapper
+  .form-title Sign In
+  = form_for(@user, url: session_path(resource_name)) do |f|
+    .form-item
+      = f.email_field :email, autofocus: true, placeholder: 'EMAIL'
+      
+    .form-item
+      = f.password_field :password, autocomplete: "off", placeholder: 'PASSWORD'
+      
+    .button-panel
+      = f.submit 'SIGN IN', class: 'button'
+      
+  .form-footer
+    %p
+      %a{:href => "#"} Create an account
+    %p
+      %a{:href => "#"} Forgot password?
+
+
+
