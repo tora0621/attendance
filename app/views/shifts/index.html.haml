@@ -1,8 +1,18 @@
-= link_to 'signin', new_user_session_path
-= link_to 'signup', new_user_registration_path
-= link_to 'signout', destroy_user_session_path, method: :delete
-%p#demo1 ここに時計が表示されます
-%p#demo2 ここに時計が表示されます
-%P#demo3 ここに時計が表示されるよ
-%p#demo4 ここに時計が表示されるよ
-%p#demo5 ここに時計が表示されるよ
+.main_wrapper
+  .contents
+    .header
+      .header__name 店名: -----------
+      .header__link
+        = link_to 'ログイン', new_user_session_path, class: 'signin_button'
+        = link_to '新規登録', new_user_registration_path, class: 'signup_button'
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'signout_button'
+    .main
+      .clock_flame
+        %span#clock_date ここに年月日が表示されるよ
+        %span#clock_time ここに時間が表示されるよ
+      .button_flame
+        .button_flame__box
+          
+        .button_flame__box
+        
+        
