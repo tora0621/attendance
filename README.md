@@ -29,7 +29,7 @@ Things you may want to cover:
 |id|integer|null: false|
 |email|string|null: false|
 |name|string|null: false|
-|grade|integer|null: false|
+|grade|integer||
 |per_hour|integer||
 ### Association
 - has_many :shifts
