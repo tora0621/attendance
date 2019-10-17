@@ -1,7 +1,7 @@
 .main_wrapper
   .contents
     .header
-      .header__name 店名: -----------
+      .header__name 店名: ---------------店
       .header__link
         = link_to 'ログイン', new_user_session_path, class: 'signin_button'
         = link_to '新規登録', new_user_registration_path, class: 'signup_button'
@@ -11,8 +11,13 @@
         %span#clock_date ここに年月日が表示されるよ
         %span#clock_time ここに時間が表示されるよ
       .button_flame
-        .button_flame__box
+        = form_with model: @shift, url: '#' do |f|
+          .button_flame__box
+            = f.submit '出勤', class: 'start_button'
+            = f.submit '退勤', class: 'end_button'
+          .button_flame__box
+            = f.submit '休憩', class: 'rest_start_button'
+            = f.submit '戻り', class: 'rest_end_button'
           
-        .button_flame__box
         
-        
+
