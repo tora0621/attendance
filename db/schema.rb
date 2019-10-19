@@ -13,12 +13,14 @@
 ActiveRecord::Schema.define(version: 2019_10_15_112815) do
 
   create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "starts_at", null: false
-    t.time "expired_at", null: false
+    t.time "starts_at"
+    t.time "expired_at"
     t.time "break_starts_at"
     t.time "break_expired_at"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shifts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -36,4 +38,5 @@ ActiveRecord::Schema.define(version: 2019_10_15_112815) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shifts", "users"
 end

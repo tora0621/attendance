@@ -89,7 +89,8 @@
       }
     }
     .main {
-      height: 550px;
+      height: 530px;
+      border-bottom: 2px solid #fafafa;asnm,
       .clock_flame {
         width: 50%;
         height: 350px;
@@ -108,7 +109,7 @@
         }
         #clock_time {
           font-size: 60px;
-          padding-top: 20px;
+          padding-top: 50px;
           font-weight: bold;
         }
       }
@@ -119,8 +120,72 @@
         float: right;
         &__box {
           height: 50%;
+          padding-top: 100px;
+          .start_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #668ad8;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #668ad8;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+            margin-right: 100px;
+          }
+          .end_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #f12e20;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #f12e20;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+            
+          }
+          .rest_start_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #40f728;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #40f728;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+            margin-right: 100px;
+          }
+          .rest_end_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #f79628;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #f79628;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+          }
         }
       }
+    }
+    .footer {
+      text-align: center;
+      color: rgb(219, 214, 214);
     }
   }
 }
