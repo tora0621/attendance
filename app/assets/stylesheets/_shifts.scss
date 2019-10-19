@@ -1,0 +1,191 @@
+.main_wrapper{
+  width: 100%;
+  height: 100%;
+  .contents {
+    width: 100%;
+    height: 100%;
+    .header {
+      height: 120px;
+      border-bottom: 2px solid #fafafa;
+      &__name {
+        color: #666;
+        margin:  0;                 
+        font-size:  24px;           
+        position:  relative;        
+        font-weight:  normal;       
+        display:  block;     
+        padding-top: 20px;          
+        padding-left: 20px;        
+        padding-bottom: 10px;
+        border-bottom: 2px solid #fafafa;
+      }
+      .header__name:before {
+        content:  '';              
+        background-color: #f8dcdf;  
+        display:  block;            
+        position:  absolute;        
+        left:  1;                   
+        height: 40px;               
+        width: 40px;                
+        border-radius:  50%;        
+        top: 1;                     
+        z-index:  -1;
+        
+      }
+      &__link {
+        height: 54px;
+        text-align: right;
+        .signin_button {
+          display: inline-block;
+          text-decoration: none;
+          background: #87befd;
+          color: #FFF;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          text-align: center;
+          overflow: hidden;
+          transition: .4s;
+          font-size: 10px;
+        }
+        .signin_button:hover {
+          background: #668ad8;
+        }
+        .signup_button {
+          display: inline-block;
+          text-decoration: none;
+          background: #c4f3c3;
+          color: #FFF;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          text-align: center;
+          overflow: hidden;
+          transition: .4s;
+          font-size: 10px;
+        }
+        .signup_button:hover {
+          background: green;
+        }
+        .signout_button {
+          display: inline-block;
+          text-decoration: none;
+          background: rgb(238, 165, 165);
+          color: #FFF;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          text-align: center;
+          overflow: hidden;
+          transition: .4s;
+          font-size: 10px;
+        }
+        .signout_button:hover {
+          background: rgb(230, 32, 49);
+        }
+      }
+    }
+    .main {
+      height: 530px;
+      border-bottom: 2px solid #fafafa;asnm,
+      .clock_flame {
+        width: 50%;
+        height: 350px;
+        display: inline-block;
+        span {
+          display: block;     
+          width: 100%;
+          padding-left: 300px;
+          color: rgb(9, 9, 70);
+        }
+        #clock_date {
+          // text-align: right;
+          font-size: 15px;
+          // padding-right: 0.5em;
+          padding-top: 100px;
+        }
+        #clock_time {
+          font-size: 60px;
+          padding-top: 50px;
+          font-weight: bold;
+        }
+      }
+      .button_flame {
+        width: 50%;
+        height: 350px;
+        display: inline-block;
+        float: right;
+        &__box {
+          height: 50%;
+          padding-top: 100px;
+          .start_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #668ad8;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #668ad8;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+            margin-right: 100px;
+          }
+          .end_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #f12e20;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #f12e20;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+            
+          }
+          .rest_start_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #40f728;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #40f728;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+            margin-right: 100px;
+          }
+          .rest_end_button {
+            display: inline-block;
+            text-decoration: none;
+            color: #f79628;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            border: solid 2px #f79628;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: .4s;
+          }
+        }
+      }
+    }
+    .footer {
+      text-align: center;
+      color: rgb(219, 214, 214);
+    }
+  }
+}

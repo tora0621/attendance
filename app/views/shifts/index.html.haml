@@ -1,4 +1,31 @@
-= link_to 'signin', new_user_session_path
-= link_to 'signup', new_user_registration_path
-= link_to 'signout', destroy_user_session_path, method: :delete
-%p#RealtimeClockArea ※ここに時計が表示されます。
+.main_wrapper
+  .contents
+    .header
+      .header__name 店名: ---------------店
+      .header__link
+        = link_to 'ログイン', new_user_session_path, class: 'signin_button'
+        = link_to '新規登録', new_user_registration_path, class: 'signup_button'
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'signout_button'
+    .main
+      .clock_flame
+        %span#clock_date ここに年月日が表示されるよ
+        %span#clock_time ここに時間が表示されるよ
+      .button_flame
+        = form_with model: @shift, url: shifts_path, method: :post, local: true do |f|
+          .button_flame__box
+            -# = f.text_field :user_id, placeholder: 'id'
+            = f.submit '出勤', class: 'start_button'
+            = f.submit '退勤', class: 'end_button'
+          .button_flame__box
+            = f.submit '休憩', class: 'rest_start_button'
+            = f.submit '戻り', class: 'rest_end_button'
+    .footer
+      %p 2019
+      %p sample
+      
+= form_with model: @shift, url: shifts_path, method: :post, local: true do |f|
+  = f.text_field :user_id, placeholder: 'id'
+  = f.submit '出勤', class: 'start_button'
+= form_with model: @shift, url: shifts_path, method: :post, local: true do |f|
+  = f.time_field :starts_at
+  = f.submit
