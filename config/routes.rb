@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'shifts#index'
+  root to: 'shifts#new'
   resources :shifts do
     collection do
       get :start

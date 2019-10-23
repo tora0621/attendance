@@ -1,7 +1,10 @@
 class ShiftsController < ApplicationController
   # before_action :set_shift, only: [:show, :edit, :update, :destroy, :rest_time_start, :rest_time_end]
   # before_action :set_user, only: [:start, :finish, :rest_time_start, :rest_time_end]
+
   def index
+  end
+  def new
     @shift = Shift.new
     # binding.pry
   end
@@ -18,7 +21,8 @@ class ShiftsController < ApplicationController
     @shift = Shift.new(shift_params)
     # binding.pry
     @shift.save!
-    redirect_to root_path      
+    redirect_to root_path
+    flash[:attend] = '出勤しました' 
   end
 
   def finish
@@ -26,18 +30,21 @@ class ShiftsController < ApplicationController
     # binding.pry
     @shift.save!
     redirect_to root_path
+    flash[:finish] = '退勤しました'
   end
   def rest_time_start
     @shift = Shift.new(shift_params)
     # binding.pry
     @shift.save!
     redirect_to root_path
+    flash[:rest_start] = '休憩です'
   end
   def rest_time_end
     @shift = Shift.new(shift_params)
     # binding.pry
     @shift.save!
     redirect_to root_path
+    flash[:rest_end] = '戻りです'
   end
 
   
