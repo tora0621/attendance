@@ -89,38 +89,42 @@
       }
     }
     .main {
-      height: 530px;
+      height: 500px;
       border-bottom: 2px solid #fafafa;asnm,
       .clock_flame {
-        width: 50%;
-        height: 350px;
+        width: 100%;
+        height: 250px;
         display: inline-block;
         span {
-          display: block;     
-          width: 100%;
+          display: inline;     
           padding-left: 300px;
           color: rgb(9, 9, 70);
         }
         #clock_date {
           // text-align: right;
-          font-size: 15px;
+          font-size: 18px;
           // padding-right: 0.5em;
-          padding-top: 100px;
+          // padding-top: 100px;
         }
         #clock_time {
-          font-size: 60px;
-          padding-top: 50px;
+          font-size: 150px;
+          // padding-top: 50px;
           font-weight: bold;
         }
       }
       .button_flame {
-        width: 50%;
-        height: 350px;
+        width: 100%;
+        height: 280px;
         display: inline-block;
-        float: right;
-        &__box {
-          height: 50%;
-          padding-top: 100px;
+        margin-top: 100px;
+        .form_box {
+          
+        }
+        .button_box {
+          // width: 300px;
+          // height: 50%;
+          // padding-top: 100px;
+          display: inline-block;
           .start_button {
             display: inline-block;
             text-decoration: none;
@@ -134,7 +138,7 @@
             overflow: hidden;
             font-weight: bold;
             transition: .4s;
-            margin-right: 100px;
+            margin-left: 100px;
           }
           .end_button {
             display: inline-block;
@@ -149,6 +153,7 @@
             overflow: hidden;
             font-weight: bold;
             transition: .4s;
+            margin-left: 100px;
             
           }
           .rest_start_button {
@@ -164,7 +169,8 @@
             overflow: hidden;
             font-weight: bold;
             transition: .4s;
-            margin-right: 100px;
+            margin-left: 100px;
+            // margin-right: 100px;
           }
           .rest_end_button {
             display: inline-block;
@@ -179,6 +185,7 @@
             overflow: hidden;
             font-weight: bold;
             transition: .4s;
+            margin-left: 100px;
           }
         }
       }

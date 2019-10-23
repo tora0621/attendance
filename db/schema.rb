@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2019_10_15_112815) do
 
   create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "starts_at"
-    t.time "expired_at"
-    t.time "break_starts_at"
-    t.time "break_expired_at"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "rest_start_at"
+    t.datetime "rest_end_at"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
