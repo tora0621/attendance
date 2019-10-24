@@ -1,0 +1,10 @@
+.form-wrapper
+  .form-title アルバイト情報登録
+  = form_with model: @shift, url: 'start_shifts_path', method: :get, local: true do |f|
+    .form-item
+      = f.email_field :e_mail, autofocus: true, placeholder: 'E_MAIL'
+    .form-item
+  
+      
+    .button-panel
+      = f.submit 'CREATE', class: 'button'

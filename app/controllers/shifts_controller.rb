@@ -3,6 +3,9 @@ class ShiftsController < ApplicationController
   # before_action :set_user, only: [:start, :finish, :rest_time_start, :rest_time_end]
 
   def index
+    # binding.pry
+    @users = User.all
+    @shifts = Shift.all
   end
   def new
     @shift = Shift.new
