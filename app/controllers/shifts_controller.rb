@@ -3,54 +3,49 @@ class ShiftsController < ApplicationController
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
 
   def index
-    # binding.pry
     @shifts = Shift.all
   end
   def new
     @shift = Shift.new
-    # binding.pry
   end
   def create
     @shift = Shift.new(shift_params)
-
-    # binding.pry
     @shift.save
-    # binding.pry
   end
 
   def start
-    
     # binding.pry
     @shift = Shift.new(shift_params)
     # binding.pry
     @shift.save
-    binding.pry
-    @worker = Worker.new(status: :attendance)
-    # @worker.status = :attendance
     # binding.pry
-    @worker.save
+    id = @shift.worker_id
+    @worker = Worker.find(id).update_attributes(status: :attendance)
     redirect_to root_path
     flash[:attend] = '出勤しました' 
   end
 
   def finish
     @shift = Shift.new(shift_params)
-    # binding.pry
     @shift.save!
+    id = @shift.worker_id
+    @worker = Worker.find(id).update_attributes(status: :un_attendance)
     redirect_to root_path
     flash[:finish] = '退勤しました'
   end
   def rest_time_start
     @shift = Shift.new(shift_params)
-    # binding.pry
     @shift.save!
+    id = @shift.worker_id
+    @worker = Worker.find(id).update_attributes(status: :rest)
     redirect_to root_path
     flash[:rest_start] = '休憩です'
   end
   def rest_time_end
     @shift = Shift.new(shift_params)
-    # binding.pry
     @shift.save!
+    id = @shift.worker_id
+    @worker = Worker.find(id).update_attributes(status: :attendance)
     redirect_to root_path
     flash[:rest_end] = '戻りです'
   end

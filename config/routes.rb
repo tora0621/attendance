@@ -8,11 +8,6 @@ Rails.application.routes.draw do
       get :rest_time_start
       get :rest_time_end
     end
-    # member do
-    #   get :finish
-    #   get :rest_time_start
-    #   get :rest_time_end
-    # end
   end
 
   resources :workers do

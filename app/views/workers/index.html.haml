@@ -1,0 +1,10 @@
+%tr
+  - @workers.each do |worker|
+    %td= link_to worker.first_name, root_path
+    %td= link_to worker.last_name, root_path
+    %tb= worker.created_at.strftime("%Y-%m-%d %H:%M")
+    %td= link_to '編集', edit_worker_path(worker)
+    %td= link_to '削除', worker_path(worker), method: :delete
+
+
+    -# %td= t("activerecord.status.#{worker.status}")

@@ -1,4 +1,9 @@
 class WorkersController < ApplicationController
+  before_action :set_worker, only:  [:edit, :update, :destroy]
+
+  def index
+    @workers = Worker.all
+  end
   def new
     @worker = Worker.new
   end
@@ -6,6 +11,15 @@ class WorkersController < ApplicationController
     @worker = Worker.new(worker_params)
     @worker.save
     redirect_to root_path
+  end
+  def edit
+  end
+  def update
+  end
+  def destroy
+    @worker.destroy
+    redirect_to root_path
+    flash[:finish] = '削除しました'
   end
 
 private
