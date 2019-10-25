@@ -1,10 +1,9 @@
 class ShiftsController < ApplicationController
   # before_action :set_shift, only: [:show, :edit, :update, :destroy, :rest_time_start, :rest_time_end]
-  # before_action :set_user, only: [:start, :finish, :rest_time_start, :rest_time_end]
+  before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
 
   def index
     # binding.pry
-    @users = User.all
     @shifts = Shift.all
   end
   def new
@@ -20,10 +19,16 @@ class ShiftsController < ApplicationController
   end
 
   def start
+    
     # binding.pry
     @shift = Shift.new(shift_params)
     # binding.pry
-    @shift.save!
+    @shift.save
+    binding.pry
+    @worker = Worker.new(status: :attendance)
+    # @worker.status = :attendance
+    # binding.pry
+    @worker.save
     redirect_to root_path
     flash[:attend] = '出勤しました' 
   end
@@ -63,11 +68,11 @@ class ShiftsController < ApplicationController
     )
   end
 
-  def set_shift
-    @shift = Shift.find(params[:id])
-  end
+  # def set_shift
+  #   @shift = Shift.find(params[:id])
+  # end
 
-  def set_user
-    @user = User.find(params[:user_id].to_i) if params[:user_id].present?
+  def set_worker
+    @worker = Worker.find(params[:worker_id].to_i) if params[:worker_id].present?
   end
 end
