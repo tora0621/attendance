@@ -1,7 +1,7 @@
 class ShiftsController < ApplicationController
   # before_action :set_shift, only: [:show, :edit, :update, :destroy, :rest_time_start, :rest_time_end]
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
-
+  
   def index
     @shifts = Shift.all
   end
@@ -14,40 +14,55 @@ class ShiftsController < ApplicationController
   end
 
   def start
-    # binding.pry
     @shift = Shift.new(shift_params)
-    # binding.pry
-    @shift.save
-    # binding.pry
-    id = @shift.worker_id
-    @worker = Worker.find(id).update_attributes(status: :attendance)
-    redirect_to root_path
-    flash[:attend] = '出勤しました' 
+    if @shift.save
+      id = @shift.worker_id
+      @worker = Worker.find(id).update_attributes(status: :attendance)
+      redirect_to root_path
+      flash[:attend] = '出勤しました' 
+    else
+      render 'new'
+    end
   end
 
   def finish
-    @shift = Shift.new(shift_params)
-    @shift.save!
-    id = @shift.worker_id
-    @worker = Worker.find(id).update_attributes(status: :un_attendance)
-    redirect_to root_path
-    flash[:finish] = '退勤しました'
+    @shift = Shift.where(params[:worker_id]).started.last
+    @shift.end_at = Time.now
+    binding.pry
+    if @shift.save
+      id = @shift.worker_id
+      @worker = Worker.find(id).update_attributes(status: :un_attendance)
+      redirect_to root_path
+      flash[:finish] = '退勤しました'
+    else
+      render 'new'
+    end
   end
+
   def rest_time_start
-    @shift = Shift.new(shift_params)
-    @shift.save!
-    id = @shift.worker_id
-    @worker = Worker.find(id).update_attributes(status: :rest)
-    redirect_to root_path
-    flash[:rest_start] = '休憩です'
+    @shift = Shift.where(params[:worker_id]).started.last
+    @shift.rest_start_at = Time.now
+    if @shift.save
+      id = @shift.worker_id
+      @worker = Worker.find(id).update_attributes(status: :rest)
+      redirect_to root_path
+      flash[:rest_start] = '休憩です'
+    else 
+      render 'new'
+    end
   end
+
   def rest_time_end
-    @shift = Shift.new(shift_params)
-    @shift.save!
-    id = @shift.worker_id
-    @worker = Worker.find(id).update_attributes(status: :attendance)
-    redirect_to root_path
-    flash[:rest_end] = '戻りです'
+    @shift = Shift.where(params[:worker_id]).started.last
+    @shift.rest_end_at = Time.now
+    if @shift.save
+      id = @shift.worker_id
+      @worker = Worker.find(id).update_attributes(status: :attendance)
+      redirect_to root_path
+      flash[:rest_end] = '戻りです'
+    else
+      render 'new'
+    end
   end
 
   

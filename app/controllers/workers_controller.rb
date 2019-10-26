@@ -4,18 +4,32 @@ class WorkersController < ApplicationController
   def index
     @workers = Worker.all
   end
+
   def new
     @worker = Worker.new
   end
+
   def create
     @worker = Worker.new(worker_params)
-    @worker.save
-    redirect_to root_path
+    if @worker.save
+       redirect_to root_path
+    else
+       render 'new'
+    end
   end
+
   def edit
   end
+
   def update
+    if  @worker.update(worker_params)
+      redirect_to root_path
+      flash[:rest_start] = '編集しました'
+    else
+      render 'edit'
+    end
   end
+
   def destroy
     @worker.destroy
     redirect_to root_path
