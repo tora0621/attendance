@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'shifts#index'
+  root to: 'shifts#new'
   resources :shifts do
     collection do
       get :start
@@ -8,11 +8,9 @@ Rails.application.routes.draw do
       get :rest_time_start
       get :rest_time_end
     end
-    # member do
-    #   get :finish
-    #   get :rest_time_start
-    #   get :rest_time_end
-    # end
+  end
+
+  resources :workers do
   end
 
   devise_for :users, :controllers => {

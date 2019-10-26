@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_112815) do
+ActiveRecord::Schema.define(version: 2019_10_23_113508) do
 
   create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_at"
     t.datetime "end_at"
     t.datetime "rest_start_at"
     t.datetime "rest_end_at"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shifts_on_user_id"
+    t.bigint "worker_id"
+    t.index ["worker_id"], name: "index_shifts_on_worker_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,5 +38,25 @@ ActiveRecord::Schema.define(version: 2019_10_15_112815) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "shifts", "users"
+  create_table "workers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
+    t.string "tel"
+    t.string "e_mail"
+    t.string "post_number"
+    t.string "address"
+    t.string "birthday"
+    t.string "classification"
+    t.string "authority"
+    t.string "hire_date"
+    t.string "departure_date"
+    t.string "affiliation"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "shifts", "workers"
 end

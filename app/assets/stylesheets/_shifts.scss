@@ -90,7 +90,7 @@
     }
     .main {
       height: 500px;
-      border-bottom: 2px solid #fafafa;asnm,
+      border-bottom: 2px solid #fafafa;
       .clock_flame {
         width: 100%;
         height: 250px;
@@ -195,4 +195,19 @@
       color: rgb(219, 214, 214);
     }
   }
+}
+.notifications {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: orange;
+  }
+}
+#shift_worker_id {
+  width: 30px;
 }
