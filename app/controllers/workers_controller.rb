@@ -2,7 +2,8 @@ class WorkersController < ApplicationController
   before_action :set_worker, only:  [:edit, :update, :destroy]
 
   def index
-    @workers = Worker.all
+    @workers = Worker.all.includes(:shifts)
+    # binding.pry
   end
 
   def new
@@ -51,6 +52,7 @@ private
     :e_mail,
     :post_number,
     :address,
+    :per_hour,
     :birthday,
     :classification,
     :authority,

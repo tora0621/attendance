@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_113508) do
+ActiveRecord::Schema.define(version: 2019_10_27_084810) do
 
   create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_at"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_113508) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "per_hour"
   end
 
   add_foreign_key "shifts", "workers"
