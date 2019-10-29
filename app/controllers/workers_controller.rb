@@ -3,6 +3,13 @@ class WorkersController < ApplicationController
 
   def index
     @workers = Worker.all.includes(:shifts)
+
+    sum = 0
+    @workers.each do |worker|
+      worker.shifts.finish.each do |shift|
+        sum += shift.salary
+      end
+    end
     # binding.pry
   end
 
