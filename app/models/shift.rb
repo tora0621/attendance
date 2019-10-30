@@ -22,17 +22,4 @@ class Shift < ApplicationRecord
       end
       array.sum
   end
-      # total_salary = 0
-      # @shifts = Shift.all
-      # @shifts.finish.each do |shift|
-      #   total_salary += shift.day_salary
-      # end
-
-
-      # sum = 0
-      # @workers.each do |worker|
-      #   worker.shifts.finish.each do |shift|
-      #     sum += shift.salary
-      #   end
-      # end
 end
