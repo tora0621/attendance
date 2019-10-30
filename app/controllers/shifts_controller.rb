@@ -5,7 +5,7 @@ class ShiftsController < ApplicationController
   def index
     @shifts = Shift.all
 
-    end
+    
     # binding.pry
 
     # array = []

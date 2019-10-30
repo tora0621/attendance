@@ -1,24 +1,43 @@
-%tr
-  - @workers.each do |worker|
-    %td= link_to worker.first_name, root_path
-    %td= link_to worker.last_name, root_path
-    -# %td= link_to worker.sum, root_path
-    -# %td= link_to worker.sum, root_path
+.main_wrapper
+  .contents
+    = render 'shared/header'
+
+%table
+  %tr
+    %th 会社名
+    %td テーブル株式会社
+  %tr
+    %th 創業
+    %td 1940年
+  %tr
+    %th 従業員数
+    %td 500人
+  %tr
+    %th 電話番号
+    %td 000-000-0000
+
+
+-# %tr
+-#   - @workers.each do |worker|
+-#     %td= link_to worker.first_name, root_path
+-#     %td= link_to worker.last_name, root_path
+-#     -# %td= link_to worker.sum, root_path
+-#     -# %td= link_to worker.sum, root_path
     
-    -# %tb= worker.created_at.strftime("%Y-%m-%d %H:%M")
-    -# %td= link_to worker.salary, root_path
+-#     -# %tb= worker.created_at.strftime("%Y-%m-%d %H:%M")
+-#     -# %td= link_to worker.salary, root_path
 
-    - worker.shifts.finish.each do |shift|
-      -# %td= link_to shift.start_at.strftime("%Y-%m-%d %H:%M"), root_path
-      -# %p 残り
-      %td= shift.day_salary
-      -# %td= shift.month_salary
-
-
-    %td= link_to '編集', edit_worker_path(worker)
-    %td= link_to '削除', worker_path(worker), method: :delete
+-#     - worker.shifts.finish.each do |shift|
+-#       -# %td= link_to shift.start_at.strftime("%Y-%m-%d %H:%M"), root_path
+-#       -# %p 残り
+-#       %td= shift.day_salary
+-#       -# %td= shift.month_salary
 
 
-    -# %td= t("activerecord.status.#{worker.status}")
+-#     %td= link_to '編集', edit_worker_path(worker)
+-#     %td= link_to '削除', worker_path(worker), method: :delete
 
-%p= @total_price
+
+-#     -# %td= t("activerecord.status.#{worker.status}")
+
+-# %p= @total_price

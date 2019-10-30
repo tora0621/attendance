@@ -1,0 +1,20 @@
+table {
+  width: 100%;
+
+  th {
+    position: relative;
+    text-align: left;
+    width: 15%;
+
+    &:after {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background-color: #333;
+      position: absolute;
+      top: calc(50% - 1px);
+      right: 20px;
+    }
+  }
+}
