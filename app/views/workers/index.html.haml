@@ -7,18 +7,20 @@
   - @workers.each do |worker|
     %th 名前
     %td= worker.first_name + worker.last_name
-    %td 
-    %td 
+    -# %td 
+    -# %td
   %tr
-    %th 扶養
+  - @workers.each do |worker|
+    %th 出勤状態
+    %td= t("activerecord.status.#{worker.status}")
+  %tr
+    %th 扶養残り
     %td= number_to_currency(@total_price, unit: "￥", precision: 0, locale: 'en')
-    %td
-    %td 
-  -# %tr
-  -#   %th 見出し
-  -#   %td データ
-  -#   %td データ
-  -#   %td データ
+    -# %td
+    -# %td 
+  
+    -# %td データ
+    -# %td データ
   -# %tr
   -#   %th 見出し
   -#   %td データ
