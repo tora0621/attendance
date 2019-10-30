@@ -1,9 +1,18 @@
 class ShiftsController < ApplicationController
   # before_action :set_shift, only: [:show, :edit, :update, :destroy, :rest_time_start, :rest_time_end]
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
-  
+
   def index
     @shifts = Shift.all
+
+    
+    # binding.pry
+
+    # array = []
+    #   @shifts.finish.each do |shift|
+    #     array << shift.day_salary
+    #   end
+    # binding.pry
   end
   def new
     @shift = Shift.new
