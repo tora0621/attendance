@@ -4,17 +4,27 @@
 
 %table
   %tr
-    %th 会社名
-    %td テーブル株式会社
+  - @workers.each do |worker|
+    %th 名前
+    %td= worker.first_name + worker.last_name
+    %td 
+    %td 
   %tr
-    %th 創業
-    %td 1940年
-  %tr
-    %th 従業員数
-    %td 500人
-  %tr
-    %th 電話番号
-    %td 000-000-0000
+    %th 扶養
+    %td= number_to_currency(@total_price, unit: "￥", precision: 0, locale: 'en')
+    %td
+    %td 
+  -# %tr
+  -#   %th 見出し
+  -#   %td データ
+  -#   %td データ
+  -#   %td データ
+  -# %tr
+  -#   %th 見出し
+  -#   %td データ
+  -#   %td データ
+  -#   %td データ
+
 
 
 -# %tr
