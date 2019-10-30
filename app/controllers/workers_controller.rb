@@ -4,13 +4,14 @@ class WorkersController < ApplicationController
   def index
     @workers = Worker.all.includes(:shifts)
 
-    sum = 0
+    @total_price = 0
     @workers.each do |worker|
       worker.shifts.finish.each do |shift|
-        sum += shift.salary
+        @total_price += shift.day_salary
       end
     end
     # binding.pry
+    
   end
 
   def new
