@@ -56,6 +56,22 @@ form {
     transition: background 0.3s ease-in-out;
     width: 100%;
   }
+  .back-button {
+    text-decoration: none;
+    display: inline-block;
+    background: #6ef162;
+    border-top: solid;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+  }
 }
 
 .button:hover {
