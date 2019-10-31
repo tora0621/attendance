@@ -1,6 +1,7 @@
 class ShiftsController < ApplicationController
   # before_action :set_shift, only: [:show, :edit, :update, :destroy, :rest_time_start, :rest_time_end]
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
+  
 
   def index
     @shifts = Shift.all
@@ -17,6 +18,7 @@ class ShiftsController < ApplicationController
     @shift = Shift.new(shift_params)
     if @shift.save
       id = @shift.worker_id
+      # binding.pry
       @worker = Worker.find(id).update_attributes(status: :attendance)
       redirect_to root_path
       flash[:attend] = '出勤しました' 
@@ -28,8 +30,8 @@ class ShiftsController < ApplicationController
   def finish
     @shift = Shift.where(params[:worker_id]).started.last
     @shift.end_at = Time.now
-    binding.pry
-    if @shift.save
+    if @shift.action_required = true
+      @shift.save
       id = @shift.worker_id
       @worker = Worker.find(id).update_attributes(status: :un_attendance)
       redirect_to root_path
