@@ -10,9 +10,6 @@ class WorkersController < ApplicationController
         @total_price += shift.day_salary
       end
     end
-    
-    # binding.pry
-    
   end
 
   def new
