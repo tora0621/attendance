@@ -4,15 +4,6 @@ class ShiftsController < ApplicationController
 
   def index
     @shifts = Shift.all
-
-    
-    # binding.pry
-
-    # array = []
-    #   @shifts.finish.each do |shift|
-    #     array << shift.day_salary
-    #   end
-    # binding.pry
   end
   def new
     @shift = Shift.new
