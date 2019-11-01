@@ -1,6 +1,7 @@
 .header
   .header__name 店名: ---------------店
   .header__link
+    = link_to '給料だよ', wages_path
     = link_to '一覧', workers_path, class: 'signout_button'
     = link_to '登録', new_worker_path, class: 'signup_button'
     = link_to 'ログイン', new_user_session_path, class: 'signin_button'
