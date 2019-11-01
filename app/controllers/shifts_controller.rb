@@ -18,7 +18,6 @@ class ShiftsController < ApplicationController
     @shift = Shift.new(shift_params)
     if @shift.save
       id = @shift.worker_id
-      # binding.pry
       @worker = Worker.find(id).update_attributes(status: :attendance)
       redirect_to root_path
       flash[:attend] = '出勤しました' 
@@ -35,6 +34,7 @@ class ShiftsController < ApplicationController
       id = @shift.worker_id
       @worker = Worker.find(id).update_attributes(status: :un_attendance)
       redirect_to root_path
+      # binding.pry
       flash[:finish] = '退勤しました'
     else
       render 'new'

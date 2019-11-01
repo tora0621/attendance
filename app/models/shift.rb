@@ -35,8 +35,16 @@ class Shift < ApplicationRecord
       s = end_at - start_at - ( rest_end_at - rest_start_at )
     end
       h = s / 60 / 60
-      @wage = (h * worker.per_hour).round
+      m = (h * worker.per_hour).round
+      binding.pry
+      
+      
+      
   end
+
+  # def set_salary
+
+  # end
 
   # def total_salary
   #     @shifts = Shift.all

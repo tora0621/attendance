@@ -1,6 +1,7 @@
 class Worker < ApplicationRecord
   enum status:{attendance: 1,un_attendance: 0,rest: 2}
   has_many :shifts
+  has_many :wages, through: :shifts
 
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
