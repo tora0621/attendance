@@ -9,8 +9,6 @@ class Shift < ApplicationRecord
   attr_accessor :action_required
   after_save :salary, if: :action_required?
 
-
-
   def day_salary
     if rest_end_at.nil? and rest_start_at.nil?
       s = end_at - start_at
@@ -25,9 +23,8 @@ class Shift < ApplicationRecord
   def action_required?
     action_required
   end
-  private
 
-  
+  private
   def salary
     if rest_end_at.nil? and rest_start_at.nil?
       s = end_at - start_at
@@ -36,16 +33,12 @@ class Shift < ApplicationRecord
     end
       h = s / 60 / 60
       m = (h * worker.per_hour).round
-      binding.pry
-      
-      
-      
+      @shift = Shift.finish.last
+      @wage = Wage.new
+      @wage.attributes = {base: m,worker_id: @shift.worker_id, shift_id: @shift.id}
+      # binding.pry
+      @wage.save
   end
-
-  # def set_salary
-
-  # end
-
   # def total_salary
   #     @shifts = Shift.all
   #     array = []
