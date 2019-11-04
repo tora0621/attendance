@@ -28,7 +28,7 @@ class ShiftsController < ApplicationController
     @shift = Shift.where(params[:worker_id]).started.last
     @shift.end_at = Time.now
     if @shift.action_required = true
-      @shift.save
+      @shift.save!
       id = @shift.worker_id
       @worker = Worker.find(id).update_attributes(status: :un_attendance)
       redirect_to root_path

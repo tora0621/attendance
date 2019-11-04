@@ -26,6 +26,7 @@ class Shift < ApplicationRecord
 
   private
   def salary
+    # binding.pry
     if rest_end_at.nil? and rest_start_at.nil?
       working_seconds = end_at - start_at
     else
@@ -33,7 +34,7 @@ class Shift < ApplicationRecord
     end
     working_hours = working_seconds / 60 / 60
     night_border = DateTime.parse "10:00 pm"
-
+    # binding.pry
     if working_hours > 8 && night_border < end_at
       base_wage = (8 * worker.per_hour).round
       long_time = working_hours - 8
@@ -45,18 +46,23 @@ class Shift < ApplicationRecord
       night_wage = (worker.per_hour * 1.25 * night_time).round
       base_time = (night_border - start_at) / 60 / 60
       base_wage = (worker.per_hour * base_time).round
+      long_wage = 0
     elsif working_hours > 8
       base_wage = (8 * worker.per_hour).round
       long_time = working_hours - 8
       long_wage = (worker.per_hour * 1.25 * long_time).round
+      total_wage = base_wage + long_wage
+      night_wage = 0
     else 
       base_wage = (working_hours * worker.per_hour).round  ## 8 >= working_hours
+      total_wage = base_wage
+      night_wage = 0
+      long_wage = 0
     end
-
-    total_wage = base_wage + long_wage + night_wage
     @shift = Shift.finish.last
     @wage = Wage.new
     @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
+    # binding.pry
     @wage.save
   end
 end
