@@ -4,12 +4,6 @@ class WorkersController < ApplicationController
   def index
     @workers = Worker.all.includes(:shifts, :wages)
     # binding.pry
-    # @total_price = 0
-    # @workers.each do |worker|
-    #   worker.shifts.finish.each do |shift|
-    #     @total_price += shift.day_salary
-    #   end
-    # end
   end
 
   def new

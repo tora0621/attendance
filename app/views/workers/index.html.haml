@@ -6,27 +6,16 @@
   %tr
   - @workers.each do |worker|
     %th 名前
-    %td= link_to worker.first_name + worker.last_name, "/workers/#{worker.id}"
-    -# - worker.wages.each do |wage|
-    -#   %th= wage.total
-
+    %td= link_to worker.fullname, "/workers/#{worker.id}", class: 'name_box'
   %tr
   - @workers.each do |worker|
     %th 出勤状態
     %td= t("activerecord.status.#{worker.status}")
-  -# %tr
-  -#   %th 扶養残り
-    -# %td= number_to_currency(@total_price, unit: "￥", precision: 0, locale: 'en')
-    -# %td
-    -# %td 
-  
-    -# %td データ
-    -# %td データ
-  -# %tr
-  -#   %th 見出し
-  -#   %td データ
-  -#   %td データ
-  -#   %td データ
+  %tr
+  - @workers.each do |worker|
+    %th 扶養残り
+    %td= number_to_currency(1080000 - worker.wages.totals, :unit => "円")
+    
 
 
 

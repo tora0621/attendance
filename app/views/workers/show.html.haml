@@ -5,13 +5,16 @@
 %table
   %tr
     %th 名前
-    %td= @worker.first_name
+    %td= @worker.fullname
 
   %tr
-  - @worker.wages.each do |wage|
+  - @worker.wages.wage_all.each do |wage|
     %th 日付
     %td= wage.created_at.strftime('%Y/%m/%d')
   %tr
-  - @worker.wages.each do |wage|
+  - @worker.wages.wage_all.each do |wage|
     %th 給料
     %td= wage.total
+  %tr
+    %th
+    %td

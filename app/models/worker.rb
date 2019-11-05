@@ -3,6 +3,11 @@ class Worker < ApplicationRecord
   has_many :shifts
   has_many :wages, through: :shifts
 
+  def fullname
+    first_name + last_name
+  end
+
+
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
 
