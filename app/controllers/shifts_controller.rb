@@ -1,8 +1,6 @@
 class ShiftsController < ApplicationController
-  # before_action :set_shift, only: [:show, :edit, :update, :destroy, :rest_time_start, :rest_time_end]
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
   
-
   def index
     @shifts = Shift.all
   end
@@ -30,7 +28,7 @@ class ShiftsController < ApplicationController
     @shift = Shift.where(params[:worker_id]).started.last
     @shift.end_at = Time.now
     if @shift.action_required = true
-      @shift.save
+      @shift.save!
       id = @shift.worker_id
       @worker = Worker.find(id).update_attributes(status: :un_attendance)
       redirect_to root_path
@@ -67,8 +65,6 @@ class ShiftsController < ApplicationController
     end
   end
 
-  
-
   private 
   def shift_params
     params.require(:shift).permit(
@@ -79,10 +75,6 @@ class ShiftsController < ApplicationController
       :rest_end_at
     )
   end
-
-  # def set_shift
-  #   @shift = Shift.find(params[:id])
-  # end
 
   def set_worker
     @worker = Worker.find(params[:worker_id].to_i) if params[:worker_id].present?

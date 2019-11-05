@@ -2,14 +2,8 @@ class WorkersController < ApplicationController
   before_action :set_worker, only:  [:edit, :update, :destroy]
 
   def index
-    @workers = Worker.all.includes(:shifts)
-
-    @total_price = 0
-    @workers.each do |worker|
-      worker.shifts.finish.each do |shift|
-        @total_price += shift.day_salary
-      end
-    end
+    @workers = Worker.all.includes(:shifts, :wages)
+    # binding.pry
   end
 
   def new
@@ -23,6 +17,11 @@ class WorkersController < ApplicationController
     else
        render 'new'
     end
+  end
+
+  def show
+    @worker = Worker.find_by(id: params[:id])
+    # binding.pry
   end
 
   def edit

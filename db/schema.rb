@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_065928) do
+ActiveRecord::Schema.define(version: 2019_11_01_065435) do
 
   create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_at"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2019_10_31_065928) do
     t.integer "other", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "shift_id"
+    t.index ["shift_id"], name: "index_wages_on_shift_id"
     t.index ["worker_id"], name: "index_wages_on_worker_id"
   end
 
@@ -73,5 +75,6 @@ ActiveRecord::Schema.define(version: 2019_10_31_065928) do
   end
 
   add_foreign_key "shifts", "workers"
+  add_foreign_key "wages", "shifts"
   add_foreign_key "wages", "workers"
 end
