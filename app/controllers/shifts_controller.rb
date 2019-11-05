@@ -2,7 +2,10 @@ class ShiftsController < ApplicationController
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
   
   def index
-    @shifts = Shift.all
+    # @shifts = Shift.all
+    @q = Shift.ransack(params[:q])
+    @shifts = @q.result(distinct: true)
+    # binding.pry
   end
   def new
     @shift = Shift.new

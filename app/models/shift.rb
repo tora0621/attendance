@@ -1,5 +1,7 @@
 class Shift < ApplicationRecord
 
+  # ransacker :start_at, callable: proc { Arel.sql('DATE(start_at)') }
+
   belongs_to :worker
   has_one :wage
 
