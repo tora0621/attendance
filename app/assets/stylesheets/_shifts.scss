@@ -140,6 +140,10 @@
             transition: .4s;
             margin-left: 100px;
           }
+          .start_button:hover {
+            background-color: #668ad8;
+            color: white;
+          }
           .end_button {
             display: inline-block;
             text-decoration: none;
@@ -154,7 +158,10 @@
             font-weight: bold;
             transition: .4s;
             margin-left: 100px;
-            
+          }
+          .end_button:hover {
+            background-color: #f12e20;
+            color: white;
           }
           .rest_start_button {
             display: inline-block;
@@ -170,7 +177,10 @@
             font-weight: bold;
             transition: .4s;
             margin-left: 100px;
-            // margin-right: 100px;
+          }
+          .rest_start_button:hover {
+            background-color: #40f728;
+            color: white;
           }
           .rest_end_button {
             display: inline-block;
@@ -186,6 +196,10 @@
             font-weight: bold;
             transition: .4s;
             margin-left: 100px;
+          }
+          .rest_end_button:hover {
+            background-color: #f79628;
+            color: white;
           }
         }
       }
@@ -209,5 +223,5 @@
   }
 }
 #shift_worker_id {
-  width: 30px;
+  width: 60px;
 }

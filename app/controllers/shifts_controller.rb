@@ -20,6 +20,7 @@ class ShiftsController < ApplicationController
       redirect_to root_path
       flash[:attend] = '出勤しました' 
     else
+      flash.now[:alert] = '出勤に失敗しました'
       render 'new'
     end
   end
@@ -35,6 +36,7 @@ class ShiftsController < ApplicationController
       # binding.pry
       flash[:finish] = '退勤しました'
     else
+      flash.now[:alert] = '退勤に失敗しました'
       render 'new'
     end
   end
@@ -47,7 +49,8 @@ class ShiftsController < ApplicationController
       @worker = Worker.find(id).update_attributes(status: :rest)
       redirect_to root_path
       flash[:rest_start] = '休憩です'
-    else 
+    else
+      flash.now[:alert] = '休憩に失敗しました'
       render 'new'
     end
   end
@@ -61,6 +64,7 @@ class ShiftsController < ApplicationController
       redirect_to root_path
       flash[:rest_end] = '戻りです'
     else
+      flash.now[:alert] = '戻りに失敗しました'
       render 'new'
     end
   end

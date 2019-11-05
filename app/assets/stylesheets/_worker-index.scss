@@ -13,7 +13,30 @@ table td{
   text-align: center;
   padding: 10px 0;
   .name_box {
+    position: relative;
+    display: inline-block;
+    color: #1B1B1B;
     text-decoration: none;
-    color: black;
+    font-weight: bold;
+  }
+  .name_box:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .name_box::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform .3s;
+  }
+  .name_box:hover::after {
+    transform-origin: left top;
+    transform: scale(1, 1);
   }
 }
