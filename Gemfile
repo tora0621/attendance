@@ -66,3 +66,7 @@ gem 'erb2haml'
 gem 'jquery-rails'
 gem 'pry-byebug'
 gem 'ransack'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
