@@ -271,6 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrussh
   bootsnap (>= 1.1.0)
   byebug
   capistrano
