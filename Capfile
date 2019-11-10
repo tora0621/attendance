@@ -1,4 +1,5 @@
 require "capistrano/setup"
+require "airbrussh/capistrano"
 require "capistrano/deploy"
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
@@ -6,7 +7,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano3/unicorn'
 
-require "airbrussh/capistrano"
+# require "airbrussh/capistrano"
 
 
 require "capistrano/scm/git"
