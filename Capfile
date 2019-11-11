@@ -9,8 +9,8 @@ require 'capistrano3/unicorn'
 require "airbrussh/capistrano"
 
 
-require "capistrano/scm/git"
-install_plugin Capistrano::SCK::Git
+# require "capistrano/scm/git"
+# install_plugin Capistrano::SCK::Git
 
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 

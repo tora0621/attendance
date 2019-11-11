@@ -44,7 +44,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'airbrussh', require: false
+  gem 'airbrussh', '1.3.3', require: false
 end
 
 group :development do
