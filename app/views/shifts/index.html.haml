@@ -1,9 +1,14 @@
 = search_form_for @q do |f|
   = f.label :start_at, "Keyword"
-  = f.search_field :start_at_eq
-  -# = f.date_field :start_at_gteq
-  -# = f.date_field :start_at_lteq
+  = f.date_field :start_at_gteq
+  = f.date_field :start_at_lteq
   = f.submit '検索'
+
+-# = search_form_for @q, url: purchased_histories_path do |f|
+-#   = f.date_field :purchased_date_gteq
+-#   \~
+-#   \#{f.date_field :purchased_date_lteq}
+
 
 
 
