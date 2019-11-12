@@ -46,19 +46,18 @@ Shift.create!([
   {start_at: "2019-11-05 05:21:36", end_at: "2019-11-05 05:22:09", rest_start_at: nil, rest_end_at: nil, worker_id: 2}
 ])
 Wage.create!([
-  {worker_id: nil, base: 9, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: nil},
-  {worker_id: 2, base: 9, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 44},
-  {worker_id: 2, base: 186, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 45},
-  {worker_id: 2, base: 376, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 46},
-  {worker_id: 2, base: 8000, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 47},
-  {worker_id: 2, base: 8000, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 48},
-  {worker_id: 2, base: 2003, long: 0, night: 0, total: 2003, meals: 0, other: 0, shift_id: 49},
-  {worker_id: 2, base: 8000, long: 2500, night: 0, total: 10500, meals: 0, other: 0, shift_id: 50},
-  {worker_id: 2, base: 8000, long: 3750, night: 0, total: 11750, meals: 0, other: 0, shift_id: 51},
-  {worker_id: 2, base: 59, long: 0, night: 0, total: 59, meals: 0, other: 0, shift_id: 52},
-  {worker_id: 2, base: 9, long: 0, night: 0, total: 9, meals: 0, other: 0, shift_id: 53}
+  {worker_id: 1, base: 9, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 44},
+  {worker_id: 1, base: 186, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 45},
+  {worker_id: 1, base: 376, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 46},
+  {worker_id: 1, base: 8000, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 47},
+  {worker_id: 1, base: 8000, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 48},
+  {worker_id: 1, base: 2003, long: 0, night: 0, total: 2003, meals: 0, other: 0, shift_id: 49},
+  {worker_id: 0, base: 8000, long: 2500, night: 0, total: 10500, meals: 0, other: 0, shift_id: 50},
+  {worker_id: 0, base: 8000, long: 3750, night: 0, total: 11750, meals: 0, other: 0, shift_id: 51},
+  {worker_id: 0, base: 59, long: 0, night: 0, total: 59, meals: 0, other: 0, shift_id: 52},
+  {worker_id: 0, base: 9, long: 0, night: 0, total: 9, meals: 0, other: 0, shift_id: 53}
 ])
 Worker.create!([
-  {first_name: "山田", last_name: "太郎", first_name_kana: "ヤマダ", last_name_kana: "タロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "attendance", per_hour: 1000},
-  {first_name: "鈴木", last_name: "二郎", first_name_kana: "スズキ", last_name_kana: "ジロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "un_attendance", per_hour: 1000}
+  {first_name: "高山", last_name: "三郎", first_name_kana: "タカヤマ", last_name_kana: "サブロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "attendance", per_hour: 1000},
+  {first_name: "鈴木", last_name: "四郎", first_name_kana: "スズキ", last_name_kana: "シロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "un_attendance", per_hour: 1000}
 ])
