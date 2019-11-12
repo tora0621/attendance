@@ -58,6 +58,6 @@ Wage.create!([
   {worker_id: 0, base: 9, long: 0, night: 0, total: 9, meals: 0, other: 0, shift_id: 53}
 ])
 Worker.create!([
-  {first_name: "高山", last_name: "三郎", first_name_kana: "タカヤマ", last_name_kana: "サブロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "attendance", per_hour: 1000},
-  {first_name: "鈴木", last_name: "四郎", first_name_kana: "スズキ", last_name_kana: "シロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "un_attendance", per_hour: 1000}
+  {first_name: "高山", last_name: "三郎", first_name_kana: "タカヤマ", last_name_kana: "サブロウ", tel: "09012345678", e_mail: "sample3@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "attendance", per_hour: 1000},
+  {first_name: "鈴木", last_name: "四郎", first_name_kana: "スズキ", last_name_kana: "シロウ", tel: "09012345678", e_mail: "sample4@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "un_attendance", per_hour: 1000}
 ])
