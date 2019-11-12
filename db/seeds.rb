@@ -1,7 +1,64 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Shift.create!([
+  {start_at: "2019-10-25 05:51:14", end_at: nil, rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: nil, end_at: "2019-10-25 06:19:00", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-25 10:49:06", end_at: "2019-10-26 06:22:44", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-25 10:50:52", end_at: "2019-10-26 05:54:12", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-26 04:36:13", end_at: "2019-10-26 05:23:21", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: nil, end_at: "2019-10-26 04:46:08", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: nil, end_at: "2019-10-26 04:49:44", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-26 05:57:41", end_at: "2019-10-26 05:58:12", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-26 05:59:21", end_at: "2019-10-26 05:59:29", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-26 06:07:48", end_at: "2019-10-26 06:08:15", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-26 10:00:00", end_at: "2019-10-26 22:00:00", rest_start_at: "2019-10-26 15:00:00", rest_end_at: "2019-10-26 16:00:00", worker_id: 2},
+  {start_at: "2019-10-26 08:51:16", end_at: "2019-10-29 04:59:22", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 09:48:14", end_at: "2019-10-31 09:50:05", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 09:52:44", end_at: nil, rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 09:54:20", end_at: nil, rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 09:56:05", end_at: nil, rest_start_at: nil, rest_end_at: "2019-11-05 07:17:03", worker_id: 2},
+  {start_at: "2019-10-31 09:58:46", end_at: "2019-11-01 07:19:18", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 10:02:30", end_at: "2019-11-01 07:18:33", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 10:02:30", end_at: "2019-11-01 02:48:49", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 10:42:21", end_at: "2019-10-31 10:51:56", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 11:03:10", end_at: "2019-10-31 11:31:48", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 11:25:27", end_at: "2019-10-31 11:25:37", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 11:47:58", end_at: "2019-10-31 11:48:19", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-10-31 11:48:19", end_at: "2019-10-31 11:49:21", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 02:49:08", end_at: "2019-11-01 02:51:03", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 02:52:42", end_at: "2019-11-01 02:53:03", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 02:53:45", end_at: "2019-11-01 02:54:10", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 03:09:21", end_at: "2019-11-01 03:18:48", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 03:11:03", end_at: "2019-11-01 03:12:03", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 03:29:40", end_at: "2019-11-01 03:59:40", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 04:10:17", end_at: "2019-11-01 04:24:23", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 04:26:12", end_at: "2019-11-01 04:26:44", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 04:35:21", end_at: "2019-11-01 05:33:35", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 05:43:14", end_at: "2019-11-01 06:59:15", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 07:00:48", end_at: "2019-11-01 07:18:16", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 07:19:18", end_at: "2019-11-01 07:19:51", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 07:31:45", end_at: "2019-11-01 07:42:55", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 08:01:11", end_at: "2019-11-01 08:24:05", rest_start_at: "2019-11-01 08:23:29", rest_end_at: "2019-11-01 08:23:48", worker_id: 2},
+  {start_at: "2019-11-01 08:28:07", end_at: "2019-11-01 09:42:05", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-01 09:56:13", end_at: "2019-11-01 09:56:35", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-02 05:40:31", end_at: "2019-11-02 07:40:40", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-02 07:47:31", end_at: "2019-11-02 07:47:46", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-02 07:55:31", end_at: "2019-11-02 07:57:20", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-02 10:15:39", end_at: "2019-11-02 10:19:11", rest_start_at: nil, rest_end_at: nil, worker_id: 2},
+  {start_at: "2019-11-05 05:21:36", end_at: "2019-11-05 05:22:09", rest_start_at: nil, rest_end_at: nil, worker_id: 2}
+])
+Wage.create!([
+  {worker_id: nil, base: 9, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: nil},
+  {worker_id: 2, base: 9, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 44},
+  {worker_id: 2, base: 186, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 45},
+  {worker_id: 2, base: 376, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 46},
+  {worker_id: 2, base: 8000, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 47},
+  {worker_id: 2, base: 8000, long: 0, night: 0, total: 0, meals: 0, other: 0, shift_id: 48},
+  {worker_id: 2, base: 2003, long: 0, night: 0, total: 2003, meals: 0, other: 0, shift_id: 49},
+  {worker_id: 2, base: 8000, long: 2500, night: 0, total: 10500, meals: 0, other: 0, shift_id: 50},
+  {worker_id: 2, base: 8000, long: 3750, night: 0, total: 11750, meals: 0, other: 0, shift_id: 51},
+  {worker_id: 2, base: 59, long: 0, night: 0, total: 59, meals: 0, other: 0, shift_id: 52},
+  {worker_id: 2, base: 9, long: 0, night: 0, total: 9, meals: 0, other: 0, shift_id: 53}
+])
+Worker.create!([
+  {first_name: "山田", last_name: "太郎", first_name_kana: "ヤマダ", last_name_kana: "タロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "attendance", per_hour: 1000},
+  {first_name: "鈴木", last_name: "二郎", first_name_kana: "スズキ", last_name_kana: "ジロウ", tel: "09012345678", e_mail: "sample@gmail.com", post_number: "1234567", address: "東京都町田市成", birthday: "", classification: "パートタイマー", authority: "一般スタッフ", hire_date: "", departure_date: "", affiliation: nil, status: "un_attendance", per_hour: 1000}
+])
