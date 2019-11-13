@@ -1,13 +1,11 @@
 = search_form_for @q do |f|
   = f.label :start_at, "Keyword"
   = f.date_field :start_at_gteq
-  = f.date_field :start_at_lteq
+  = f.date_field :start_at_lteq_end_of_day
   = f.submit '検索'
 
--# = search_form_for @q, url: purchased_histories_path do |f|
--#   = f.date_field :purchased_date_gteq
--#   \~
--#   \#{f.date_field :purchased_date_lteq}
+- @shifts.each do |shift|
+  %td= shift.start_at.strftime('"%Y年%-m月%-d日 %-H時%-M分')
 
 
 
