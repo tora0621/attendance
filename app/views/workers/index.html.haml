@@ -1,3 +1,4 @@
+%link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}
 .main_wrapper
   .contents
     = render 'shared/header'
@@ -15,6 +16,12 @@
   - @workers.each do |worker|
     %th 扶養残り
     %td= number_to_currency(1080000 - worker.wages.totals, :unit => "円")
+  %tr
+  - @workers.each do |worker|
+    %td= link_to '編集', edit_worker_path(worker), class: 'name_box'
+    %td= link_to '削除', worker_path(worker), method: :delete, class: 'name_box', data: { confirm: '本当に削除しますか？' }
+
+= paginate @workers
     
 
 
