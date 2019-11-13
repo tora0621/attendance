@@ -74,6 +74,7 @@ gem 'pry-byebug'
 gem 'ransack'
 gem 'seed_dump'
 gem 'kaminari'
+gem 'bootstrap'
 
 group :production do
   gem 'unicorn', '5.4.1'
