@@ -73,6 +73,7 @@ gem 'jquery-rails'
 gem 'pry-byebug'
 gem 'ransack'
 gem 'seed_dump'
+gem 'kaminari'
 
 group :production do
   gem 'unicorn', '5.4.1'
