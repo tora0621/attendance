@@ -41,3 +41,15 @@ table td{
   }
 }
 
+.pagination {
+  text-align: center;
+  .page.current {
+    color: #fb5144;
+  }
+  a {
+    color: #fb5144;
+    text-decoration: none;
+    // justify-content: center;
+    display: inline-block;
+  }
+}
