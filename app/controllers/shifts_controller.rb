@@ -4,8 +4,17 @@ class ShiftsController < ApplicationController
   def index
     # @shifts = Shift.all
     @q = Shift.ransack(params[:q])
-    @shifts = @q.result(distinct: true)
-    # binding.pry
+    @shifts = @q.result(distinct: true).all.includes(:worker)
+    @dates = Date.today.all_month
+
+#     this_month = Date.today.all_month # all_monthをDate.todayに適用すると、今月の年月日データを取得できる。
+#     @shifts.finish.each do |shift| 
+#      if (this_month.include?(Date.parse(shift[:start_at].to_s)))
+# # 今月の日にちの中にhoge[:created_at]の年月日が含まれていれば、trueを返す。
+#         @data += shift[:created_at]
+#      end
+#     end
+#     binding.pry
   end
   def new
     @shift = Shift.new
