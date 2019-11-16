@@ -7,6 +7,7 @@ class Shift < ApplicationRecord
 
   scope :started, -> { where(end_at: nil).order(:start_at) }
   scope :finish, -> { where.not(start_at: nil, end_at: nil) }
+  scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
 
   attr_accessor :action_required
   after_save :salary, if: :action_required?

@@ -4,7 +4,9 @@ class ShiftsController < ApplicationController
   def index
     # @shifts = Shift.all
     @q = Shift.ransack(params[:q])
+    # binding.pry
     @shifts = @q.result(distinct: true).all.includes(:worker)
+
     @dates = Date.today.all_month
 
 #     this_month = Date.today.all_month # all_monthをDate.todayに適用すると、今月の年月日データを取得できる。
@@ -79,6 +81,10 @@ class ShiftsController < ApplicationController
       flash.now[:alert] = '戻りに失敗しました'
       render 'new'
     end
+  end
+
+  def edit
+    @shift = Shift.find(params[:id])
   end
 
   private 
