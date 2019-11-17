@@ -1,0 +1,10 @@
+= form_with model: @shift, url: shift_path, method: :patch, local: true do |f|
+  = f.label '出勤時間'
+  = f.datetime_select :start_at, autofocus: true 
+  = f.label '退勤時間'
+  = f.datetime_select :end_at, autofocus: true
+  = f.label '休憩'
+  = f.datetime_select :rest_start_at, autofocus: true, include_blank: true
+  = f.label '戻り'
+  = f.datetime_select :rest_end_at, autofocus: true, include_blank: true
+  = f.submit '登録'

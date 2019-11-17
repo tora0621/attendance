@@ -85,6 +85,20 @@ class ShiftsController < ApplicationController
 
   def edit
     @shift = Shift.find(params[:id])
+    # binding.pry
+  end
+
+  def update
+    @shift = Shift.find(params[:id])
+    # binding.pry
+    if 
+      @shift.action_required = true
+      @shift.update(shift_params)
+      redirect_to shifts_path
+      flash[:rest_start] = '勤務時間編集しました'
+    else
+      render 'edit'
+    end
   end
 
   private 

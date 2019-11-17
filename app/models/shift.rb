@@ -62,10 +62,13 @@ class Shift < ApplicationRecord
       night_wage = 0
       long_wage = 0
     end
+    # binding.pry
     @shift = Shift.finish.last
     @wage = Wage.new
-    @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
+    binding.pry
+    # @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
+    @wage.update_attributes(base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id)
     # binding.pry
-    @wage.save
+    # @wage.save
   end
 end
