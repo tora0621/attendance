@@ -64,10 +64,15 @@ class Shift < ApplicationRecord
     end
     # binding.pry
     @shift = Shift.finish.last
-    @wage = Wage.new
-    binding.pry
+    @wage = Wage.find_or_initialize_by(id: @shift.id)
+    if @wage.new_record? # 新規作成の場合は保存
+      @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
+      @wage.save
+    # binding.pry
     # @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
-    @wage.update_attributes(base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id)
+    else
+      @wage.update_attributes(base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id)
+    end
     # binding.pry
     # @wage.save
   end
