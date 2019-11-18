@@ -3,7 +3,7 @@ class WorkersController < ApplicationController
 
   def index
     @workers = Worker.all.includes(:shifts, :wages)
-    @workers = Worker.page(params[:page]).per(2)
+    # @workers = Worker.page(params[:page]).per(2)
     # binding.pry
   end
 

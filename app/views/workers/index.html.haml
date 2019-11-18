@@ -1,51 +1,25 @@
-
 .main_wrapper
   .contents
     = render 'shared/header'
-
-%table
-  %tr
-  - @workers.each do |worker|
-    %th 名前
-    %td= link_to worker.fullname, "/workers/#{worker.id}", class: 'name_box'
-  %tr
-  - @workers.each do |worker|
-    %th 出勤状態
-    %td= t("activerecord.status.#{worker.status}")
-  %tr
-  - @workers.each do |worker|
-    %th 扶養残り
-    %td= number_to_currency(1080000 - worker.wages.totals, :unit => "円")
-  %tr
-  - @workers.each do |worker|
-    %td= link_to '編集', edit_worker_path(worker), class: 'name_box'
-    %td= link_to '削除', worker_path(worker), method: :delete, class: 'name_box', data: { confirm: '本当に削除しますか？' }
-= paginate @workers
-
-
-
-
--# %tr
--#   - @workers.each do |worker|
--#     %td= link_to worker.first_name, root_path
--#     %td= link_to worker.last_name, root_path
--#     -# %td= link_to worker.sum, root_path
--#     -# %td= link_to worker.sum, root_path
-    
--#     -# %tb= worker.created_at.strftime("%Y-%m-%d %H:%M")
--#     -# %td= link_to worker.salary, root_path
-
--#     - worker.shifts.finish.each do |shift|
--#       -# %td= link_to shift.start_at.strftime("%Y-%m-%d %H:%M"), root_path
--#       -# %p 残り
--#       %td= shift.day_salary
--#       -# %td= shift.month_salary
-
-
--#     %td= link_to '編集', edit_worker_path(worker)
--#     %td= link_to '削除', worker_path(worker), method: :delete
-
-
--#     -# %td= t("activerecord.status.#{worker.status}")
-
--# %p= @total_price
+  
+    %h1 一覧
+    %table
+      %tr
+        %th 名前
+        %th 出勤状態
+        %th 扶養残り
+        %th その他
+      - @workers.each do |worker|
+        %tr
+          %td 
+            = link_to worker.fullname, "/workers/#{worker.id}", class: 'name_box'
+          %td 
+            = t("activerecord.status.#{worker.status}")
+          %td 
+            = number_to_currency(1080000 - worker.wages.totals, :unit => "円")
+          %td
+            = link_to '編集', edit_worker_path(worker), class: 'name_box'
+            = link_to '削除', worker_path(worker), method: :delete, class: 'name_box', data: { confirm: '本当に削除しますか？' }
+            
+        
+  

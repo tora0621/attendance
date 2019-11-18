@@ -1,35 +1,53 @@
 .main_wrapper
   .contents
     = render 'shared/header'
+ 
+    %h1= @worker.fullname
+    %table
+      %tr
+        %th 日付
+        %th 基本給
+        %th 超勤
+        %th 深夜
+        %th 合計
+        %th まかない
+      - @worker.wages.each do |wage|
+        %tr
+          %td= wage.created_at.strftime('%Y/%m/%d')
+          %td= wage.base
+          %td= wage.long
+          %td= wage.night
+          %td= wage.total
+          %td= wage.meals
+    -# %tr
+    -#   %th 名前
+    -#   %td= @worker.fullname
+    -# %tr
+    -# - @worker.wages.wage_all.each do |wage|
+    -#   %th 日付
+    -#   %td= wage.created_at.strftime('%Y/%m/%d')
+    -# %tr
+    -# - @worker.wages.wage_all.each do |wage|
+    -#   %th 基本給
+    -#   %td= wage.base
+    -# %tr
+    -# - @worker.wages.wage_all.each do |wage|
+    -#   %th 超勤
+    -#   %td= wage.long
+    -# %tr
+    -# - @worker.wages.wage_all.each do |wage|
+    -#   %th 深夜
+    -#   %td= wage.night
+    -# %tr
+    -# - @worker.wages.wage_all.each do |wage|
+    -#   %th 合計
+    -#   %td= wage.total
+    -# %tr
+    -# - @worker.wages.wage_all.each do |wage|
+    -#   %th まかない
+    -#   %td= wage.meals
 
-  %table
-    %tr
-      %th 名前
-      %td= @worker.fullname
-    %tr
-    - @worker.wages.wage_all.each do |wage|
-      %th 日付
-      %td= wage.created_at.strftime('%Y/%m/%d')
-    %tr
-    - @worker.wages.wage_all.each do |wage|
-      %th 基本給
-      %td= wage.base
-    %tr
-    - @worker.wages.wage_all.each do |wage|
-      %th 超勤
-      %td= wage.long
-    %tr
-    - @worker.wages.wage_all.each do |wage|
-      %th 深夜
-      %td= wage.night
-    %tr
-    - @worker.wages.wage_all.each do |wage|
-      %th 合計
-      %td= wage.total
-    %tr
-    - @worker.wages.wage_all.each do |wage|
-      %th まかない
-      %td= wage.meals
+
     
   
   
