@@ -8,7 +8,7 @@
         %th 名前
         %th 出勤状態
         %th 扶養残り
-        %th その他
+        %th 編集・削除
       - @workers.each do |worker|
         %tr
           %td 
@@ -20,6 +20,11 @@
           %td
             = link_to '編集', edit_worker_path(worker), class: 'name_box'
             = link_to '削除', worker_path(worker), method: :delete, class: 'name_box', data: { confirm: '本当に削除しますか？' }
-            
+    -# %h1 名前検索
+    -# = search_form_for @q do |f|
+    -#   = f.label :fullname, "名前"
+    -#   -# = f.date_field :start_at_gteq
+    -#   -# = f.date_field :start_at_lteq_end_of_day
+    -#   = f.submit '検索'
         
   
