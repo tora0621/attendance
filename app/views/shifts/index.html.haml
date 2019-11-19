@@ -14,26 +14,26 @@
         %th 出勤状態
         %th 扶養残り
         %th 編集
-    - @shifts.created_today.each do |shift|
-      %tr
-        %td
-          = shift.start_at.strftime('%Y年%-m月%-d日') if shift.start_at.present?
-        %td
-          = shift.start_at.strftime('%-H時%-M分') if shift.start_at.present?
-        %td
-          = shift.end_at.strftime('%-H時%-M分') if shift.end_at.present?
-        %td
-          = shift.rest_start_at.strftime('%-H時%-M分') if shift.rest_start_at.present?
-        %td
-          = shift.rest_end_at.strftime('%-H時%-M分') if shift.rest_end_at.present? 
-        %td
-          = shift.worker.fullname
-        %td
-          = t("activerecord.status.#{shift.worker.status}")
-        %td
-          = number_to_currency(1080000 - shift.worker.wages.totals, :unit => "円")
-        %td 
-          = link_to '編集', edit_shift_path(shift), class: 'name_box'
+      - @shifts.created_today.each do |shift|
+        %tr
+          %td
+            = shift.start_at.strftime('%Y年%-m月%-d日') if shift.start_at.present?
+          %td
+            = shift.start_at.strftime('%-H時%-M分') if shift.start_at.present?
+          %td
+            = shift.end_at.strftime('%-H時%-M分') if shift.end_at.present?
+          %td
+            = shift.rest_start_at.strftime('%-H時%-M分') if shift.rest_start_at.present?
+          %td
+            = shift.rest_end_at.strftime('%-H時%-M分') if shift.rest_end_at.present? 
+          %td
+            = shift.worker.fullname
+          %td
+            = t("activerecord.status.#{shift.worker.status}")
+          %td
+            = number_to_currency(1080000 - shift.worker.wages.totals, :unit => "円")
+          %td 
+            = link_to '編集', edit_shift_path(shift), class: 'name_box'
 
     -# %h1 シフト検索
     -# = search_form_for @q do |f|
