@@ -2,10 +2,9 @@ class ShiftsController < ApplicationController
   before_action :set_worker, only: [:start, :finish, :rest_time_start, :rest_time_end]
   
   def index
-    # @shifts = Shift.all
     @q = Shift.ransack(params[:q])
-    @shifts = @q.result(distinct: true)
-    # binding.pry
+    @shifts = @q.result(distinct: true).all.includes(:worker)
+    @dates = Date.today.all_month
   end
   def new
     @shift = Shift.new
@@ -69,6 +68,22 @@ class ShiftsController < ApplicationController
     else
       flash.now[:alert] = '戻りに失敗しました'
       render 'new'
+    end
+  end
+
+  def edit
+    @shift = Shift.find(params[:id])
+  end
+
+  def update
+    @shift = Shift.find(params[:id])
+    if 
+      @shift.action_required = true
+      @shift.update(shift_params)
+      redirect_to shifts_path
+      flash[:rest_start] = '勤務時間編集しました'
+    else
+      render 'edit'
     end
   end
 

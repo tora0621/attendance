@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :workers do
+    get 'search', to: 'workers#search'
   end
 
   devise_for :users, :controllers => {

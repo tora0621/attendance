@@ -7,6 +7,7 @@ class Shift < ApplicationRecord
 
   scope :started, -> { where(end_at: nil).order(:start_at) }
   scope :finish, -> { where.not(start_at: nil, end_at: nil) }
+  scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
 
   attr_accessor :action_required
   after_save :salary, if: :action_required?
@@ -61,10 +62,18 @@ class Shift < ApplicationRecord
       night_wage = 0
       long_wage = 0
     end
-    @shift = Shift.finish.last
-    @wage = Wage.new
-    @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
     # binding.pry
-    @wage.save
+    @shift = Shift.finish.last
+    @wage = Wage.find_or_initialize_by(id: @shift.id)
+    if @wage.new_record? # 新規作成の場合は保存
+      @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
+      @wage.save
+    # binding.pry
+    # @wage.attributes = {base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id}
+    else
+      @wage.update_attributes(base: base_wage, long: long_wage, night: night_wage, total: total_wage, worker_id: @shift.worker_id, shift_id: @shift.id)
+    end
+    # binding.pry
+    # @wage.save
   end
 end

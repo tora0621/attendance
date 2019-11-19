@@ -3,7 +3,10 @@ class WorkersController < ApplicationController
 
   def index
     @workers = Worker.all.includes(:shifts, :wages)
-    @workers = Worker.page(params[:page]).per(2)
+    # @q = Worker.ransack(params[:q])
+    # @workers = @q.result(distinct: true).all.includes(:shifts, :wages)
+
+    # @workers = Worker.page(params[:page]).per(2)
     # binding.pry
   end
 
@@ -22,7 +25,8 @@ class WorkersController < ApplicationController
 
   def show
     @worker = Worker.find_by(id: params[:id])
-    # binding.pry
+    
+    
   end
 
   def edit

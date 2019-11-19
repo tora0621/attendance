@@ -1,7 +1,7 @@
 .header
   .header__name 店名: ---------------店
   .header__link
-    -# = link_to '製作中だよ', shifts_path
+    = link_to '今日', shifts_path, class: 'signout_button'
     = link_to 'ホーム', root_path, class: 'signin_button'
     = link_to '一覧', workers_path, class: 'signout_button'
     = link_to '登録', new_worker_path, class: 'signup_button'
