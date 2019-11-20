@@ -11,7 +11,7 @@
         %th 休憩
         %th 戻り
         %th 編集
-      - @worker.shifts.each do |shift|
+      - @workers.each do |shift|
         %tr
           %td
             = shift.start_at.strftime('%Y年%-m月%-d日') if shift.start_at.present?
@@ -27,3 +27,4 @@
             = link_to '編集', edit_shift_path(shift), class: 'name_box'
     .button_box
       =link_to '戻る', worker_path, class: 'button_box__time'
+= paginate @workers
