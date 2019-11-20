@@ -25,3 +25,5 @@
             = shift.rest_end_at.strftime('%-H時%-M分') if shift.rest_end_at.present? 
           %td 
             = link_to '編集', edit_shift_path(shift), class: 'name_box'
+    .button_box
+      =link_to '戻る', worker_path, class: 'button_box__time'

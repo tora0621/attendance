@@ -1,7 +1,7 @@
 .main_wrapper
   .contents
     = render 'shared/header'
- 
+
     %h1.content_name= @worker.fullname + ' 給料'
     %table
       %tr
@@ -19,8 +19,9 @@
           %td= wage.night
           %td= wage.total
           %td= wage.meals
+    .button_box
+      =link_to '時間', show_time_worker_path, class: 'button_box__time'
 
-=link_to '時間', show_time_worker_path, class: ''
       
 
     
