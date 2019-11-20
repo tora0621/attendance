@@ -1,3 +1,27 @@
 .main_wrapper
   .contents
     = render 'shared/header'
+
+    %h1= @worker.fullname + '(仮)勤務時間'
+    %table
+      %tr
+        %th 日時
+        %th 出勤
+        %th 退勤
+        %th 休憩
+        %th 戻り
+        %th 編集
+      - @worker.shifts.each do |shift|
+        %tr
+          %td
+            = shift.start_at.strftime('%Y年%-m月%-d日') if shift.start_at.present?
+          %td
+            = shift.start_at.strftime('%-H時%-M分') if shift.start_at.present?
+          %td
+            = shift.end_at.strftime('%-H時%-M分') if shift.end_at.present?
+          %td
+            = shift.rest_start_at.strftime('%-H時%-M分') if shift.rest_start_at.present?
+          %td
+            = shift.rest_end_at.strftime('%-H時%-M分') if shift.rest_end_at.present? 
+          %td 
+            = link_to '編集', edit_shift_path(shift), class: 'name_box'
