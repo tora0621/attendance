@@ -2,7 +2,7 @@
   .contents
     = render 'shared/header'
 
-    %h1= @worker.fullname + '(仮)勤務時間'
+    %h1.content_name= @worker.fullname + ' 勤務時間'
     %table
       %tr
         %th 日時
