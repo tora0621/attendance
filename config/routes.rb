@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :workers do
+    member do
+      get :show_time
+    end
     get 'search', to: 'workers#search'
   end
 

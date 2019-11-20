@@ -2,7 +2,7 @@
   .contents
     = render 'shared/header'
  
-    %h1= @worker.fullname + '(仮)'
+    %h1= @worker.fullname + '(仮)給料'
     %table
       %tr
         %th 日付
@@ -19,6 +19,9 @@
           %td= wage.night
           %td= wage.total
           %td= wage.meals
+
+=link_to '時間', show_time_worker_path
+      
 
     
 

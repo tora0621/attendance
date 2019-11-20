@@ -34,16 +34,6 @@
             = number_to_currency(1080000 - shift.worker.wages.totals, :unit => "円")
           %td 
             = link_to '編集', edit_shift_path(shift), class: 'name_box'
-
-    -# %h1 シフト検索
-    -# = search_form_for @q do |f|
-    -#   = f.label :start_at, "出勤日"
-    -#   = f.date_field :start_at_gteq
-    -#   = f.date_field :start_at_lteq_end_of_day
-    -#   = f.submit '検索'
-      -# - @shifts.each do |shift|
-      -#   %td= link_to shift.worker.fullname, '#'
-      -#   %td= shift.start_at.strftime('%Y年%-m月%-d日 %-H時%-M分')
       
       
           
