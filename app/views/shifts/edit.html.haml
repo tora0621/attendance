@@ -4,11 +4,9 @@
 
   .form_box
     = form_with model: @shift, url: shift_path, method: :patch, class: 'time_class', local: true do |f|
-      -# = f.label '出勤時間'
       .time_class__select
         = f.label '出勤'
         = f.datetime_select :start_at, autofocus: true, date_separator: '/'
-      -# = f.label '退勤時間'
       .time_class__select
         = f.label '退勤'
         = f.datetime_select :end_at, autofocus: true, date_separator: '/', discard_year: true
