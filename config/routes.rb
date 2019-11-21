@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :wages do
     collection do
       get :menu
+      get :makanai
+      get :eat
     end
   end
   
