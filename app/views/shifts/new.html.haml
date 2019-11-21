@@ -4,8 +4,8 @@
     .main
       .side
       .clock_flame
-        %span#clock_date ここに年月日が表示されるよ
-        %span#clock_time ここに時間が表示されるよ
+        %span#clock_date 
+        %span#clock_time 
       .button_flame
         .button_box
           = form_with model: @shift, url: start_shifts_path, method: :get, local: true do |f|
