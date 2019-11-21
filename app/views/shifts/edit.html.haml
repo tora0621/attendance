@@ -17,10 +17,10 @@
         = f.label '戻り'
         = f.datetime_select :rest_end_at, autofocus: true, include_blank: true, date_separator: '/', discard_year: true
 
-      .time_class__select
-        = f.submit '登録'
-      .time_class__select
-        = link_to '戻る', shifts_path
+      .button_box
+        = f.submit '登録', class: 'button_box__create'
+      .button_box
+        = link_to '戻る', shifts_path, class: 'button_box__return'
 
 
   
