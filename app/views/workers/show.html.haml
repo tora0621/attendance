@@ -1,8 +1,8 @@
 .main_wrapper
   .contents
     = render 'shared/header'
- 
-    %h1= @worker.fullname + '(仮)給料'
+
+    %h1.content_name= @worker.fullname + ' 給料'
     %table
       %tr
         %th 日付
@@ -11,7 +11,7 @@
         %th 深夜
         %th 合計
         %th まかない
-      - @worker.wages.each do |wage|
+      - @workers.each do |wage|
         %tr
           %td= wage.created_at.strftime('%Y/%m/%d')
           %td= wage.base
@@ -19,8 +19,10 @@
           %td= wage.night
           %td= wage.total
           %td= wage.meals
+    .button_box
+      =link_to '時間', show_time_worker_path, class: 'button_box__time'
+= paginate @workers
 
-=link_to '時間', show_time_worker_path
       
 
     

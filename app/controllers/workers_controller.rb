@@ -20,10 +20,13 @@ class WorkersController < ApplicationController
 
   def show
     @worker = Worker.find_by(id: params[:id])
+    @workers = @worker.wages.page(params[:page]).per(8)
+    # binding.pry
   end
 
   def show_time
     @worker = Worker.find_by(id: params[:id])
+    @workers = @worker.shifts.page(params[:page]).per(8)
   end
 
   def edit
