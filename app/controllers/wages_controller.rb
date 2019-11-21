@@ -4,6 +4,6 @@ class WagesController < ApplicationController
   end
   def show
   end
-  def makanai
+  def menu
   end
 end
