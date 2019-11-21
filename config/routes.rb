@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   end
 
   resources :wages do
+    collection do
+      get :makanai
+    end
   end
   
 end
