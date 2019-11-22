@@ -4,90 +4,6 @@
   .contents {
     width: 100%;
     height: 100%;
-    .header {
-      height: 120px;
-      border-bottom: 2px solid #fafafa;
-      &__name {
-        color: #666;
-        margin:  0;                 
-        font-size:  24px;           
-        position:  relative;        
-        font-weight:  normal;       
-        display:  block;     
-        padding-top: 20px;          
-        padding-left: 20px;        
-        padding-bottom: 10px;
-        border-bottom: 2px solid #fafafa;
-      }
-      .header__name:before {
-        content:  '';              
-        background-color: #f8dcdf;  
-        display:  block;            
-        position:  absolute;        
-        left:  1;                   
-        height: 40px;               
-        width: 40px;                
-        border-radius:  50%;        
-        top: 1;                     
-        z-index:  -1;
-        
-      }
-      &__link {
-        height: 54px;
-        text-align: right;
-        .signin_button {
-          display: inline-block;
-          text-decoration: none;
-          background: #87befd;
-          color: #FFF;
-          width: 50px;
-          height: 50px;
-          line-height: 50px;
-          border-radius: 50%;
-          text-align: center;
-          overflow: hidden;
-          transition: .4s;
-          font-size: 10px;
-        }
-        .signin_button:hover {
-          background: #668ad8;
-        }
-        .signup_button {
-          display: inline-block;
-          text-decoration: none;
-          background: #c4f3c3;
-          color: #FFF;
-          width: 50px;
-          height: 50px;
-          line-height: 50px;
-          border-radius: 50%;
-          text-align: center;
-          overflow: hidden;
-          transition: .4s;
-          font-size: 10px;
-        }
-        .signup_button:hover {
-          background: green;
-        }
-        .signout_button {
-          display: inline-block;
-          text-decoration: none;
-          background: rgb(238, 165, 165);
-          color: #FFF;
-          width: 50px;
-          height: 50px;
-          line-height: 50px;
-          border-radius: 50%;
-          text-align: center;
-          overflow: hidden;
-          transition: .4s;
-          font-size: 10px;
-        }
-        .signout_button:hover {
-          background: rgb(230, 32, 49);
-        }
-      }
-    }
     .main {
       height: 500px;
       border-bottom: 2px solid #fafafa;
@@ -219,3 +135,5 @@
 #shift_worker_id {
   width: 60px;
 }
+
+
