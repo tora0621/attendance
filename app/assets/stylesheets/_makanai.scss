@@ -1,0 +1,60 @@
+.makanai_main {
+  height: 100%;
+}
+
+.eat_form {
+  position: relative;
+  min-width: 200px;
+  margin: 100px 33% 30px;
+  &__button {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #3c6690;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border: double 4px  #3c6690;
+    border-radius: 50%;
+    // vertical-align: middle;
+    overflow: hidden;
+    transition: .6s;
+  }
+  .eat_form__button:hover {
+    transform: rotateY(360deg);
+  }
+}
+.eat_form select {
+  width: 140px;
+  max-width: 420px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+.home__button {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #e75b1a;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border: double 4px  #e75b1a;
+  border-radius: 50%;
+  // vertical-align: middle;
+  overflow: hidden;
+  transition: .6s;
+  background-color: #ffffff;
+}
+.home__button:hover {
+  transform: rotateY(360deg);
+}
