@@ -26,8 +26,6 @@
 }
 
 .button_box {
-  
-  // text-align: center;
   font-size: 20px;
   &__create {
     margin: 0 auto;
@@ -40,7 +38,6 @@
     line-height: 60px;
     border: double 4px  #21e71a;
     border-radius: 50%;
-    // vertical-align: middle;
     overflow: hidden;
     transition: .6s;
   }
@@ -58,7 +55,6 @@
     line-height: 60px;
     border: double 4px #e71a1a;
     border-radius: 50%;
-    // vertical-align: middle;
     overflow: hidden;
     transition: .6s;
   }

@@ -6,7 +6,6 @@ class WagesController < ApplicationController
   end
   def makanai
     @wages = Wage.all
-    # binding.pry
     @wage = Wage.new
   end
   def eat

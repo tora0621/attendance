@@ -100,11 +100,8 @@
           padding-left: 300px;
           color: rgb(9, 9, 70);
         }
-        #clock_date {
-          // text-align: right;
+        #clock_date {       
           font-size: 18px;
-          // padding-right: 0.5em;
-          // padding-top: 100px;
         }
         #clock_time {
           font-size: 150px;
@@ -121,9 +118,6 @@
           
         }
         .button_box {
-          // width: 300px;
-          // height: 50%;
-          // padding-top: 100px;
           display: inline-block;
           .start_button {
             display: inline-block;
