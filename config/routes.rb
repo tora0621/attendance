@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'shifts#new'
+  root to: 'wages#menu'
   resources :shifts do
     collection do
       get :start
@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   end
 
   resources :wages do
+    collection do
+      get :menu
+      get :makanai
+      get :eat
+    end
   end
   
 end
