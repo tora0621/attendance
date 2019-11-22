@@ -35,7 +35,6 @@ class ShiftsController < ApplicationController
       id = @shift.worker_id
       @worker = Worker.find(id).update_attributes(status: :un_attendance)
       redirect_to root_path
-      # binding.pry
       flash[:finish] = '退勤しました'
     else
       flash.now[:alert] = '退勤に失敗しました'

@@ -5,20 +5,28 @@ class WagesController < ApplicationController
   def menu
   end
   def makanai
+    @wages = Wage.all
+    # binding.pry
     @wage = Wage.new
   end
   def eat
-    @wage = Wage.new(wage_params)
-    # binding.pry
-    @wage.save
-    render 'makanai'
+    if @wage = Wage.where(worker_id: wage_params[:worker_id], shift_id: wage_params[:shift_id])
+      @wage.update(meals: wage_params[:meals])
+      redirect_to root_path
+      flash[:finish] = '食べました'
+    else
+      flash.now[:alert] = '食べれませんでした'
+      render 'makanai'
+    end
   end
   private
   def wage_params
-    # binding.pry
     params.require(:wage).permit(
       :worker_id,
+      :shift_id,
       :meals
     )
   end
 end
+
+      
