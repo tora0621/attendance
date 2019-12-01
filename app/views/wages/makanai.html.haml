@@ -3,13 +3,12 @@
     = render 'shared/header'
   .makanai_main
     = form_with model: @wage, url: eat_wages_path, method: :get, class: 'eat_form', local: true do |f|
-      = f.select :shift_id, Shift.all.map { |shift| [shift.start_at.strftime('%Y年%-m月%-d日'), shift.id] }, :include_blank => '時間'
-      = f.select :worker_id, Worker.all.map { |worker| [worker.fullname, worker.id] }, :include_blank => '名前'
+      = f.select :shift_id, Shift.all.map { |shift| [shift.start_at.strftime('%Y年%-m月%-d日') + shift.worker.fullname, shift.id] }, :include_blank => '時間と名前'
+      -# = f.select :worker_id, Worker.all.map { |worker| [worker.fullname, worker.id] }, :include_blank => '名前'
       = f.select :meals, ['100', '150', '300'], include_blank: '値段'
       = f.submit '食べる', class: 'eat_form__button'
     
     = link_to '食べない', root_path, class: 'home__button'
-
   .makanai_footer
     %p 2019
     %p sample
