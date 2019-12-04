@@ -19,6 +19,13 @@ class WagesController < ApplicationController
       render 'makanai'
     end
   end
+
+  def makanai_show
+  end
+  def makanai_edit
+  end
+  def makanai_delete
+  end
   private
   def wage_params
     params.require(:wage).permit(
