@@ -20,9 +20,12 @@ class WagesController < ApplicationController
     end
   end
 
-  def makanai_show
-  end
   def makanai_edit
+    @wages = Wage.all.includes(:worker)
+    @wage_name = Wage.select('worker_id')
+    # binding.pry
+  end
+  def makanai_show
   end
   def makanai_delete
   end

@@ -1,0 +1,18 @@
+.main_wrapper
+  .contents
+    = render 'shared/header'
+  
+    %h1.content_name 従業員一覧
+    %table
+      %tr
+        %th 名前
+        %th 出勤状態
+        %th 扶養残り
+        %th 編集・削除
+      -# - @wages.each do |worker|
+        %tr
+          %td 
+            = link_to worker.fullname, "/workers/#{worker.id}", class: 'name_box'
+          %td
+            = link_to '編集', edit_worker_path(worker), class: 'name_box'
+        
