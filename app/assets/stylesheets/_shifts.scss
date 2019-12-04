@@ -5,9 +5,10 @@
     width: 100%;
     height: 100%;
     .main {
-      height: 500px;
+      height: 650px;
       border-bottom: 2px solid #fafafa;
       .clock_flame {
+        margin-top: 150px;
         width: 100%;
         height: 250px;
         display: inline-block;
@@ -27,7 +28,7 @@
       }
       .button_flame {
         width: 100%;
-        height: 280px;
+        height: 230px;
         display: inline-block;
         margin-top: 100px;
         // .form_box {
@@ -117,6 +118,7 @@
     .footer {
       text-align: center;
       color: rgb(219, 214, 214);
+      height: 50px;
     }
   }
 }

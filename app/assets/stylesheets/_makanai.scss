@@ -1,5 +1,6 @@
 .makanai_main {
-  height: 100%;
+  height: 400px;
+  margin-top: 200px;
 }
 
 .eat_form {
@@ -25,6 +26,7 @@
   }
 }
 .eat_form select {
+  margin-right: 70px;
   width: 140px;
   max-width: 420px;
   height: 40px;
@@ -55,6 +57,12 @@
 }
 .home__button:hover {
   transform: rotateY(360deg);
+}
+.makanai_footer {
+  text-align: center;
+  color: rgb(219, 214, 214);
+  height: 50px;
+  border-top: 2px solid #fafafa;
 }
 
 

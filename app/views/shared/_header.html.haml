@@ -1,34 +1,48 @@
-.head
-  .head__name 店名: ---------------店
-  .head__list
-    %ul.hList
-      %li
-        %a.menu{:href => "/"}
-          %h2.menu-title ホーム
-          %ul.menu-dropdown
-            
-      %li
-        %a.menu{:href => "/workers"}
-          %h2.menu-title.menu-title_2nd アルバイト
-          %ul.menu-dropdown
-            -# %li 今日
-            -# %li 一覧
-            -# %li 登録
-      %li
-        %a.menu{:href => "/shifts"}
-          %h2.menu-title.menu-title_3rd 今日
-          %ul.menu-dropdown
-            -# %li アルバイト
-            -# %li 勤怠
-           
-           
-      %li
-        %a.menu{:href => "/wages/makanai"}
-          %h2.menu-title.menu-title_4th まかない
-          %ul.menu-dropdown
-            -# %li{:href => "/workers"} サインイン
-            -# %li.a サインアップ
-            -# %li.a サインアウト
+%nav#navigation
+  %a.logo{:href => "/"}
+    ーーーーーーー店
+  %ul.links
+    %li
+      %a{:href => "/shifts/new"} 勤怠
+    %li.dropdown
+      %a.trigger-drop{:href => "#"}
+        アルバイト
+        %i.arrow
+      %ul.drop
+        %li
+          %a{:href => "/shifts"} 今日
+        %li
+          %a{:href => "/workers"} 一覧
+        %li
+          %a{:href => "/workers/new"} 登録
+    %li.dropdown
+      %a.trigger-drop{:href => "#"}
+        給料(仮)
+        %i.arrow
+      %ul.drop
+        %li
+          %a{:href => "#"} 一覧
+        %li
+          %a{:href => "#"} 編集
+    %li.dropdown
+      %a.trigger-drop{:href => "#"}
+        まかない
+        %i.arrow
+      %ul.drop
+        %li
+          %a{:href => "/wages/makanai"} 入力
+        %li
+          %a{:href => "#"} 編集(仮)
+    %li.dropdown
+      %a.trigger-drop{:href => "/users/sign_in"}
+        ユーザー
+        %i.arrow
+      %ul.drop
+        %li
+          %a{:href => "/users/sign_up"} 登録
+        %li
+          %a{:href => "/users/sign_in"} ログイン
+
             
 
     
