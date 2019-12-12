@@ -19,6 +19,16 @@ class WagesController < ApplicationController
       render 'makanai'
     end
   end
+
+  def makanai_edit
+    @wages = Wage.all.includes(:worker)
+    @wage_name = Wage.select('worker_id')
+    # binding.pry
+  end
+  def makanai_show
+  end
+  def makanai_delete
+  end
   private
   def wage_params
     params.require(:wage).permit(

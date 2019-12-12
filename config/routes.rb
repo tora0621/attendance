@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     collection do
       get :menu
       get :makanai
+      get :makanai_edit
+      get :makanai_delete
+      get :makanai_show
       get :eat
     end
   end
