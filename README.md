@@ -5,6 +5,7 @@
 <img width="1434" alt="スクリーンショット 2019-12-25 11 49 37" src="https://user-images.githubusercontent.com/53929705/71430048-16468580-270d-11ea-960e-343dd5982ed7.png">
 
 ## 簡単な説明
+
 主にアルバイトの勤怠管理と給料計算
  
 ## 機能
