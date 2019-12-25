@@ -1,7 +1,7 @@
 # README
 ## 作ったもの
  
-勤怠管理  
+### 勤怠管理  
 https://kintai-touroku.com
 
 ## 簡単な説明
